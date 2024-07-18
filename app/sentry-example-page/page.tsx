@@ -34,14 +34,7 @@ export default function Page() {
             ></path>
           </svg>
         </h1>
-        <button
-          type="button"
-          onClick={() => {
-            throw new Error("Sentry Frontend Error");
-          }}
-        >
-          Throw error
-        </button>
+
         <p>Get started by sending us a sample error:</p>
         <button
           type="button"
@@ -56,22 +49,12 @@ export default function Page() {
             margin: "18px",
           }}
           onClick={async () => {
-            await Sentry.startSpan(
-              {
-                name: "Example Frontend Span",
-                op: "test",
-              },
-              async () => {
-                const res = await fetch("/api/sentry-example-api");
-                if (!res.ok) {
-                  throw new Error("Sentry Example Frontend Error");
-                }
-              }
-            );
+            Sentry.captureMessage("Something went wrong", "error");
           }}
         >
           Throw error!
         </button>
+
         <p>
           Next, look for the error on the{" "}
           <a href="https://jugo-the-cat.sentry.io/issues/?project=4507620318183504">
