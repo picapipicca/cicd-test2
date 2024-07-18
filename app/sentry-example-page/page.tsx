@@ -34,15 +34,15 @@ export default function Page() {
             ></path>
           </svg>
         </h1>
-        {/* <button
+        <button
           type="button"
           onClick={() => {
             throw new Error("Sentry Frontend Error");
           }}
         >
           Throw error
-        </button> */}
-        ;<p>Get started by sending us a sample error:</p>
+        </button>
+        <p>Get started by sending us a sample error:</p>
         <button
           type="button"
           style={{
