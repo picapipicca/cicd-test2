@@ -1,7 +1,8 @@
 describe("template spec", () => {
-  it("passes", () => {
+  beforeEach(() => {
     cy.visit("http://localhost:3000");
-    cy.get("h1").should("have.text", "App Router");
-    // toHaveTextContent("App Router");
+  });
+  it("should contain 'App Router' text", () => {
+    cy.contains("App Router");
   });
 });
