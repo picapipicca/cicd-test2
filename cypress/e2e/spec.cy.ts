@@ -1,5 +1,8 @@
 describe("template spec", () => {
-  it("passes", () => {
-    cy.visit("https://www.codeit.kr/promotion/levelup-week?");
+  beforeEach(() => {
+    cy.visit("http://localhost:3000");
+  });
+  it("should contain 'App Router' text", () => {
+    cy.contains("App Router");
   });
 });
